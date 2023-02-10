@@ -80,7 +80,8 @@ const Product = () => {
                                                     <Button
                                                         className='text-white w-100'
                                                         onClick={() => {
-                                                            (cart != null && cart.length) && cart.some(item => item.name === prod.name && item.ml === ml && item.qty >= 1) ? (
+                                                            (cart != null) &&
+                                                                cart.length && cart.some(item => item.name === prod.name && item.ml === ml && item.qty >= 1) ? (
                                                                 cart.map(asset => {
                                                                     if (asset.name === prod.name && asset.ml === ml && asset.qty >= 1) {
                                                                         dispatch({
