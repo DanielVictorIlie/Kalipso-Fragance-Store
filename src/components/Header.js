@@ -213,7 +213,7 @@ function Header() {
                     <Button variant='light' onClick={toggleCart} className="rounded-circle position-relative cart-button p-0">
                         <Cart />
                         {
-                            cart.length ? (
+                            (cart !== []) ? (
                                 <div className="rounded-circle bg-danger d-flex   justify-content-center align-self-center cart-badge">
                                     {cart.length}</div>
                             ) : (
