@@ -1,38 +1,183 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital@1&family=Roboto:wght@400;500&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+.logo {
+  font-family: "Playfair Display SC", serif;
+}
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.home-page,
+.product-page,
+.cart-page {
+  min-height: calc(100vh - 126px) !important;
+}
+.search {
+  width: 500px;
+}
+.img-link {
+  width: 100%;
+  height: 13vw;
+  object-fit: contain;
+}
+.img-prod {
+  width: 100%;
+  height: 20vw;
+  object-fit: contain;
+}
+.img-header-cart {
+  width: 100%;
+  height: 6vw;
+  object-fit: contain;
+}
+.img-cart {
+  width: 100%;
+  height: 6vw;
+  object-fit: contain;
+}
+.offcanvas {
+  margin-top: 70px;
+}
+.offcanvas-filters {
+  width: 20rem !important;
+  z-index: 1 !important;
+  margin-bottom: 56px !important;
+  border: none !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product,
+.card {
+  border: none !important;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product:hover {
+  box-shadow: 5px 5px 5px 5px;
+  transition: 0.3s;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.header-cart-container:hover {
+  box-shadow: 0px 0px 5px 0px;
+  transition: 0.3s;
+}
+.filter-button {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.cart-button {
+  width: 3rem;
+  height: 3rem;
+}
+.cart-badge {
+  position: absolute;
   color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 0;
+  right: 0;
+  transform: translate(50%, 0%);
+}
+.text-secondary {
+  text-shadow: 1px 1px 2px white, 0 0 1em rgb(255, 255, 255),
+    0 0 0.2em rgb(255, 255, 255);
 }
 
-.App-link {
-  color: #61dafb;
+.card-img-overlay {
+  background: rgb(93, 93, 93);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(93, 93, 93, 0.4290966386554622) 0%,
+    rgba(93, 93, 93, 0) 100%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(93, 93, 93, 0.4290966386554622) 0%,
+    rgba(93, 93, 93, 0) 100%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(93, 93, 93, 0.4290966386554622) 0%,
+    rgba(93, 93, 93, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5d5d5d",endColorstr="#5d5d5d",GradientType=1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-img-overlay:hover {
+  box-shadow: 4px 4px 4px 4px #dc3545;
+  transition: 0.3s;
+}
+.form-check-input:checked {
+  background-color: #f6d626 !important;
+  border-color: #afafaf !important;
+}
+.form-check-input:focus {
+  border-color: #afafaf !important;
+
+  box-shadow: 0 0 0 0.25rem rgb(255 220 115 / 25%) !important;
+}
+.form-switch .form-check-input:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%27-4 -4 8 8%27%3e%3ccircle r=%273%27 fill='%23eab815'/%3e%3c/svg%3e") !important;
+}
+
+@media screen and (max-width: 992px) {
+  .img-link {
+    height: 15vw;
   }
-  to {
-    transform: rotate(360deg);
+  .img-prod {
+    height: 30vw;
+  }
+  .img-header-cart {
+    height: 9vw;
+  }
+  .img-cart {
+    height: 9vw;
+  }
+  .offcanvas-filters {
+    width: 400px !important;
+    margin-bottom: 0 !important;
+    backdrop-filter: grey !important;
+  }
+  .cart-button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .cart-badge {
+    font-size: small;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .search {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .img-link {
+    height: 30vw;
+  }
+  .img-prod {
+    height: 40vw;
+  }
+  .img-header-cart {
+    height: 18vw;
+  }
+  .img-cart {
+    height: 25vw;
+  }
+  .cart-button {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+  .cart-badge {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+  .filter-button {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+  .search {
+    width: 160px;
   }
 }
