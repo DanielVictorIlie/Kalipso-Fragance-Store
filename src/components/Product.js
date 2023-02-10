@@ -77,39 +77,41 @@ const Product = () => {
                                         <Row>
                                             <Col>
                                                 {
-                                                    <Button
-                                                        className='text-white w-100'
-                                                        onClick={() => {
-                                                            (cart != null) &&
+                                                    (cart != null) ?
+                                                        <Button
+                                                            className='text-white w-100'
+                                                            onClick={() => {
+
                                                                 cart.length && cart.some(item => item.name === prod.name && item.ml === ml && item.qty >= 1) ? (
-                                                                cart.map(asset => {
-                                                                    if (asset.name === prod.name && asset.ml === ml && asset.qty >= 1) {
-                                                                        dispatch({
-                                                                            type: 'ADD_QTY_WHEN_ADD_TO_CART',
-                                                                            payload: {
-                                                                                qty: asset.qty += 1,
-                                                                                inStock: prod.inStock -= 1
-                                                                            }
-                                                                        })
+                                                                    cart.map(asset => {
+                                                                        if (asset.name === prod.name && asset.ml === ml && asset.qty >= 1) {
+                                                                            dispatch({
+                                                                                type: 'ADD_QTY_WHEN_ADD_TO_CART',
+                                                                                payload: {
+                                                                                    qty: asset.qty += 1,
+                                                                                    inStock: prod.inStock -= 1
+                                                                                }
+                                                                            })
+                                                                        }
                                                                     }
-                                                                }
+                                                                    )
+                                                                ) : (
+                                                                    dispatch({
+                                                                        type: 'ADD_TO_CART',
+                                                                        payload: {
+                                                                            cart: prod,
+                                                                            ml: ml,
+                                                                            price: price,
+                                                                            id: Date.now(),
+                                                                            inStock: prod.inStock -= 1,
+                                                                        }
+                                                                    })
                                                                 )
-                                                            ) : (
-                                                                dispatch({
-                                                                    type: 'ADD_TO_CART',
-                                                                    payload: {
-                                                                        cart: prod,
-                                                                        ml: ml,
-                                                                        price: price,
-                                                                        id: Date.now(),
-                                                                        inStock: prod.inStock -= 1,
-                                                                    }
-                                                                })
-                                                            )
-                                                        }}
-                                                        variant='dark' disabled={!prod.inStock} >
-                                                        {!prod.inStock ? 'Out of stock' : "Add to cart"}
-                                                    </Button>
+                                                            }}
+                                                            variant='dark' disabled={!prod.inStock} >
+                                                            {!prod.inStock ? 'Out of stock' : "Add to cart"}
+                                                        </Button>
+                                                        : ''
                                                 }
                                             </Col>
                                         </Row>
