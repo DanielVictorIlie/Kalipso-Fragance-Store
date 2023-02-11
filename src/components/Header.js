@@ -213,7 +213,7 @@ function Header() {
                     <Button variant='light' onClick={toggleCart} className="rounded-circle position-relative cart-button p-0">
                         <Cart />
                         {
-                            (cart != null && cart.length) ? (
+                            (cart !== null && cart.length) ? (
                                 <div className="rounded-circle bg-danger d-flex   justify-content-center align-self-center cart-badge">
                                     {cart.length}</div>
                             ) : (
@@ -228,7 +228,7 @@ function Header() {
                         <Offcanvas.Body className='p-0 pt-1'>
                             <Stack gap={3} >
                                 {
-                                    (cart != null && cart.length) ? (
+                                    (cart !== null && cart.length) ? (
                                         <>
                                             {
                                                 cart.map(prod => (
