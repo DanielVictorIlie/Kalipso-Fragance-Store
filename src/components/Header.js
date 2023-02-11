@@ -199,7 +199,7 @@ function Header() {
                             type: 'CLEAR_FILTERS',
                         })
                     }>
-                        <div className='fs-lg-3 fs-4-sm logo'>Kalipso</div>
+                        <div className='fs-2 fs-4-sm logo'>Kalipso</div>
                     </Link>
                 </NavbarBrand>
                 <Navbar.Text className='search'>
