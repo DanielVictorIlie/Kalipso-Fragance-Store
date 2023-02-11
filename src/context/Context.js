@@ -31,7 +31,7 @@ const Context = ({ children }) => {
 
     useEffect(() => {
         localStorage.setItem('cartItems', JSON.stringify(state.cart))
-    }, [state.cart])
+    }, [state])
 
     const [productState, productDispatch] = useReducer(productReducer, {
         byStock: true,
