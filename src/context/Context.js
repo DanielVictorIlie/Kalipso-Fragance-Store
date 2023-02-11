@@ -5,7 +5,7 @@ const Cart = createContext();
 
 const getInitialState = () => {
     const localCartData = localStorage.getItem('cartItems');
-    return localCartData ? [] : JSON.parse(localCartData);
+    return localCartData ? JSON.parse(localCartData) : [];
 }
 const initialState = {
     products: [],
