@@ -81,7 +81,6 @@ const Product = () => {
                                                         <Button
                                                             className='text-white w-100'
                                                             onClick={() => {
-
                                                                 cart.length && cart.some(item => item.name === prod.name && item.ml === ml && item.qty >= 1) ? (
                                                                     cart.map(asset => {
                                                                         if (asset.name === prod.name && asset.ml === ml && asset.qty >= 1) {
@@ -111,7 +110,7 @@ const Product = () => {
                                                             variant='dark' disabled={!prod.inStock} >
                                                             {!prod.inStock ? 'Out of stock' : "Add to cart"}
                                                         </Button>
-                                                        : ''
+                                                        : console.log(cart.length, cart, typeof (cart))
                                                 }
                                             </Col>
                                         </Row>
