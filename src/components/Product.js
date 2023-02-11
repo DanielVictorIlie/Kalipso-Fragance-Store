@@ -110,7 +110,7 @@ const Product = () => {
                                                             variant='dark' disabled={!prod.inStock} >
                                                             {!prod.inStock ? 'Out of stock' : "Add to cart"}
                                                         </Button>
-                                                        : console.log(cart.length, cart, typeof (cart))
+                                                        : console.log(cart, typeof (cart))
                                                 }
                                             </Col>
                                         </Row>
