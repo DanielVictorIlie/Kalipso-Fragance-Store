@@ -105,6 +105,7 @@ function Cart() {
                                 <Col className='text-end'>
                                     <Button variant='dark' disabled={cart.length === 0}>Proceed to Checkout</Button>
                                 </Col>
+
                             </Row>
                         </Col>
                     </Row>
