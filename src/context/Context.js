@@ -4,8 +4,8 @@ import { cartReducer, productReducer } from "./Reducers";
 const Cart = createContext();
 
 const getInitialState = () => {
-    let localCartData = localStorage.getItem('cartItems');
-    return (localCartData === null) ? [] : JSON.parse(localCartData);
+    const localCartData = localStorage.getItem('cartItems');
+    return localCartData ? [] : JSON.parse(localCartData);
 }
 const initialState = {
     products: [],
