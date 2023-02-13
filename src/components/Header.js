@@ -205,7 +205,7 @@ function Header() {
                 <Navbar.Text className='search'>
                     <FormControl
                         className='mx-auto'
-                        placeholder='Search a fragance'
+                        placeholder='Search a fragrance'
                         onKeyDown={(e) => handleKeyDown(e)}
                     />
                 </Navbar.Text>
