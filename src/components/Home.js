@@ -7,15 +7,12 @@ import ProductList from './ProductList';
 const Home = () => {
     const {
         state: { products },
-        productState: { byStock, byGendre, sort, byRating, searchQuery },
+        productState: { byGendre, sort, byRating, searchQuery },
     } = CartState();
     const trasformProducts = () => {
         let sortedProducts = products;
         if (sort) {
             sortedProducts = sortedProducts.slice().sort((a, b) => sort === 'lowToHigh' ? a.price[0] - b.price[0] : b.price[0] - a.price[0])
-        }
-        if (!byStock) {
-            sortedProducts = sortedProducts.filter(prod => prod.inStock)
         }
         if (byGendre) {
             sortedProducts = sortedProducts.filter(prod => prod.for === byGendre)

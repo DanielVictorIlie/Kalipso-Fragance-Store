@@ -34,8 +34,6 @@ export const productReducer = (state, action) => {
     switch (action.type) {
         case 'SORT_BY_PRICE':
             return { ...state, sort: action.payload };
-        case 'FILTER_BY_STOCK':
-            return { ...state, byStock: !state.byStock };
         case 'FILTER_BY_GENDRE':
             return { ...state, byGendre: action.payload };
         case 'FILTER_BY_RATING':
@@ -44,7 +42,6 @@ export const productReducer = (state, action) => {
             return { ...state, searchQuery: action.payload };
         case 'CLEAR_FILTERS':
             return {
-                byStock: false,
                 byGendre: '',
                 byRating: 0,
                 searchQuery: '',

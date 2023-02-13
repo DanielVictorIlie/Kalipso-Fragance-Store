@@ -34,7 +34,6 @@ const Context = ({ children }) => {
     }, [state])
 
     const [productState, productDispatch] = useReducer(productReducer, {
-        byStock: true,
         byGendre: '',
         byRating: 0,
         searchQuery: '',
