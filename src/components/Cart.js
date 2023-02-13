@@ -4,6 +4,8 @@ import { Button, Col, Container, FormSelect, Image, ListGroup, ListGroupItem, Ro
 import { CartState } from '../context/Context'
 import Rating from './Rating';
 import { Link } from 'react-router-dom';
+import './../App.css';
+
 
 function Cart() {
     const { state: { cart, products }, dispatch } = CartState();
@@ -36,7 +38,7 @@ function Cart() {
                                         <Col md={2} xs={6} className='p-0'><Rating rating={prod.rating} /></Col>
                                         <Col md={2} xs={5}>
                                             <FormSelect
-                                                className='p-lg-2 p-sm-0 my-2 w-75'
+                                                className='p-lg-1 p-sm-0 my-2 cart-qty'
                                                 onChange={(e) =>
                                                     dispatch({
                                                         type: 'CHANGE_CART_QTY',
@@ -48,10 +50,10 @@ function Cart() {
                                                     })
                                                 }
                                                 as='select'
-                                                value={prod.qty}>
+                                                value={`${prod.qty} pcs`}>
                                                 {
                                                     [...Array(prod.inStock).keys()].map((item) => (
-                                                        <option key={item + 1}>{item + 1}</option>
+                                                        <option key={item + 1}> {`${item + 1} pcs`}</option>
                                                     ))
                                                 }
                                             </FormSelect>
