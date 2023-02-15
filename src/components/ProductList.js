@@ -13,7 +13,7 @@ function ProductList({ prod }) {
                         <Card className='text-center'>
                             <CardImg className='pb-1 pt-2 img-link' variant='top' src={prod.image} alt={prod.name} />
                             <Card.ImgOverlay className='d-flex'>
-                                <Card.Title className='my-auto mx-auto text-secondary'> OUT OF STOCK</Card.Title>
+                                <Card.Title className='card-overlay-title text-secondary'> OUT OF STOCK</Card.Title>
                             </Card.ImgOverlay>
                             <Card.Subtitle className='pb-1'>{prod.brand}</Card.Subtitle>
                             <Card.Title className='pb-1'>{prod.name}</Card.Title>
