@@ -21,7 +21,7 @@ const Home = () => {
             sortedProducts = sortedProducts.filter(prod => parseInt(prod.rating) === byRating)
         }
         if (searchQuery) {
-            sortedProducts = sortedProducts.filter(prod => prod.name.toLowerCase().includes(searchQuery) || prod.brand.toLowerCase().includes(searchQuery))
+            sortedProducts = sortedProducts.filter(prod => prod.name.toLowerCase().includes(searchQuery.toLowerCase()) || prod.brand.toLowerCase().includes(searchQuery.toLowerCase()))
         }
         return sortedProducts;
     }
